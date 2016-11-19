@@ -2,7 +2,9 @@ const {
     ChangeType
 } = require('./compare.js');
 
-const getTypeSymbol = ({type}) => {
+const getTypeSymbol = ({
+    type
+}) => {
     if (type === ChangeType.Added) {
         return '+';
     }
@@ -16,7 +18,7 @@ const getTypeSymbol = ({type}) => {
     return ' ';
 };
 
-const output = entries => entries.map((entry, index) => `${index}    ${getTypeSymbol(entry)}    ${entry.text}`).join('\n');
+const output = entries => entries.map((entry, index) => `${index+1}    ${getTypeSymbol(entry)}    ${entry.text}`).join('\n');
 
 module.exports = {
     output
